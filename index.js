@@ -14,7 +14,11 @@ app.use(cors());
 
 var server = http.createServer(app);
 
-const io = new Server(server);
+const io = new Server(server,{
+  cors :{
+    origin : 'https://chat-app-with-end-to-end-encryption-frontend.vercel.app/'
+  }
+});
 
 const users = new Map()
 
